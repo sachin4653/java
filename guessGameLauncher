@@ -1,0 +1,8 @@
+package com.vivi;
+
+public class GameLauncher {
+    public static void main(String[] agrs) {
+        guessGame game = new guessGame();
+        game.startGame();
+    }
+}
