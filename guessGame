@@ -1,0 +1,61 @@
+package com.vivi;
+
+public class guessGame {
+    player p1;
+    player p2;
+    player p3;
+
+    public void startGame() {
+        p1 = new player();
+        p2 = new player();
+        p3 = new player();
+
+        int guessp1 = 0;
+        int guessp2 = 0;
+        int guessp3 = 0;
+
+        boolean p1isright = false;
+        boolean p2isright = false;
+        boolean p3isright = false;
+
+        int targetNumber = (int) (Math.random() * 10);
+        System.out.println("hello guys, I am guessing a number you have to guess :" + targetNumber);
+        while (true) {
+            p1.guess();
+            p2.guess();
+            p3.guess();
+
+            guessp1 = p1.number;
+            guessp2 = p1.number;
+            guessp3 = p1.number;
+
+            if (guessp1 == targetNumber) {
+                p1isright = true;
+            }
+            if (guessp2 == targetNumber) {
+                p2isright = true;
+            }
+            if (guessp3 == targetNumber) {
+                p3isright = false;
+            }
+
+            if ( p1isright || p2isright || p3isright) {
+                System.out.println("We've got the winner, Let's see who guessed it ");
+                System.out.println("p1 staus:  " + p1isright);
+                System.out.println("p2 staus:  " + p2isright);
+                System.out.println("p3 staus:  " + p3isright);
+                System.out.println("Game Over!!");
+                break;
+            }
+            else {
+                System.out.println("You've to try again. ");
+            }
+        }
+
+
+
+    }
+
+
+
+}
